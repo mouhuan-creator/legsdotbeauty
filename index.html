@@ -15,39 +15,109 @@
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color: #f8f9fa;
       line-height: 1.6;
       padding: 2rem 1rem;
       min-height: 100vh;
-      
-    background-image: var(--bg-image);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-  
+      background-image: var(--bg-image); background-size: cover; background-attachment: fixed; background-position: center;
       text-shadow: 0 1px 4px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.3);
     }
-    .container { max-width: 880px; margin: 0 auto; padding: 0 0.5rem; }
-    .content h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #f8f9fa; }
-    .content h2 { font-size: 1.4rem; font-weight: 600; margin: 1.5rem 0 0.75rem 0; padding-bottom: 0.25rem; border-bottom: 2px solid #ffd966; color: #f8f9fa; }
-    .content h3 { font-size: 1.1rem; font-weight: 600; margin: 1rem 0 0.25rem 0; color: #f8f9fa; }
-    .content p { margin: 1.2rem 0; opacity: 0.92; color: #f8f9fa; }
-    .content ul, .content ol { padding-left: 1.5rem; margin: 0.5rem 0; }
-    .content li { margin: 0.3rem 0; list-style: none; color: #f8f9fa; }
-    .content a { color: #ffd966; text-decoration: none; border-bottom: 2px solid #ffd966; padding-bottom: 1px; transition: opacity 0.15s; }
-    .content a:hover { opacity: 0.7; }
-    .content blockquote { border-left: 4px solid #ffd966; padding-left: 1rem; margin: 1rem 0; font-style: italic; color: #e0e0e0; }
-    .content code { background: rgba(255,255,255,0.15); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.9em; color: #f8f9fa; }
-    .content pre { background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 6px; overflow-x: auto; margin: 1rem 0; color: #f8f9fa; }
-    .content img { max-width: 100%; border-radius: 6px; }
-    .back-home { display: inline-block; margin-top: 1.5rem; color: #ffd966; border-bottom: 2px solid #ffd966; text-decoration: none; padding-bottom: 2px; }
-    .back-home:hover { opacity: 0.7; }
-    @media (max-width: 640px) { body { padding: 1rem 0.5rem; } }
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 0.5rem;
+    }
+    .content h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #f8f9fa;
+    }
+    .content h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem 0;
+      padding-bottom: 0.25rem;
+      border-bottom: 2px solid #ffd966;
+      color: #f8f9fa;
+    }
+    .content h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 1rem 0 0.25rem 0;
+      color: #f8f9fa;
+    }
+    .content p {
+      margin: 1.2rem 0;
+      opacity: 0.92;
+      color: #f8f9fa;
+    }
+    .content ul, .content ol {
+      padding-left: 1.5rem;
+      margin: 0.5rem 0;
+    }
+    .content li {
+      margin: 0.3rem 0;
+      list-style: none;
+      color: #f8f9fa;
+    }
+    .content a {
+      color: #ffd966;
+      text-decoration: none;
+      border-bottom: 2px solid #ffd966;
+      padding-bottom: 1px;
+      transition: opacity 0.15s;
+    }
+    .content a:hover {
+      opacity: 0.7;
+    }
+    .content blockquote {
+      border-left: 4px solid #ffd966;
+      padding-left: 1rem;
+      margin: 1rem 0;
+      font-style: italic;
+      color: #e0e0e0;
+    }
+    .content code {
+      background: rgba(255,255,255,0.15);
+      padding: 0.1rem 0.3rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      color: #f8f9fa;
+    }
+    .content pre {
+      background: rgba(0,0,0,0.4);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 1rem 0;
+      color: #f8f9fa;
+    }
+    .content img {
+      max-width: 100%;
+      border-radius: 6px;
+    }
+    .back-home {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: #ffd966;
+      border-bottom: 2px solid #ffd966;
+      text-decoration: none;
+      padding-bottom: 2px;
+    }
+    .back-home:hover {
+      opacity: 0.7;
+    }
+    @media (max-width: 640px) {
+      body { padding: 1rem 0.5rem; }
+    }
   </style>
 </head>
 <body style="--bg-image: url('https://files.seeusercontent.com/2026/04/04/bj1J/20260403_232855.jpg');">
-<div class="container"><main class="content"><h1>Legs.Beauty</h1>
+<div class="container">
+  <main class="content">
+    <h1>Legs.Beauty</h1>
 <p>大概是个书签，放一些自己常用的网站，所有链接均不含 AFF。</p>
 <hr />
 <p><a href="/domain-related">域名相关</a></p>
@@ -55,6 +125,8 @@
 <p><a href="/chinese-podcast-finder">中文播客发现</a></p>
 <hr />
 <p><code>long@legs.beauty</code></p>
-<p>最后更新于2026/07/16，清晨。阴云连绵。</p></main></div>
+<p>最后更新于2026/07/16，清晨。阴云连绵。</p>
+  </main>
+</div>
 </body>
 </html>
