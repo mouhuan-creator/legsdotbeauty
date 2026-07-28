@@ -98,6 +98,26 @@
       max-width: 100%;
       border-radius: 6px;
     }
+    /* 折叠样式 */
+    .content details {
+      background: rgba(0,0,0,0.02);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 8px;
+      padding: 0.8em 1.2em;
+      margin: 1.2em 0;
+    }
+    .content details summary {
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0.2em 0;
+      color: #222222;
+    }
+    .content details[open] summary {
+      margin-bottom: 0.6em;
+    }
+    .content details p:last-child {
+      margin-bottom: 0;
+    }
     .back-home {
       display: inline-block;
       margin-top: 1.5rem;
@@ -111,13 +131,16 @@
     }
     @media (max-width: 640px) {
       body { padding: 1rem 0.5rem; }
+      .content details { padding: 0.6em 1em; }
     }
   </style>
 </head>
 <body>
 <div class="container">
   <main class="content">
-    <p>本页路径中的<code>b2b</code>是<code>blog to blog</code>的缩写，意思是<code>从博客到博客</code>，希望能成为一个辅助各位发现博客的地方。</p>
+    <details>
+<summary>b2b?</summary>
+<p>本页路径中的<code>b2b</code>是<code>blog to blog</code>的缩写，意思是<code>从博客到博客</code>，希望能成为一个辅助各位发现博客的地方。</p>
 <p>在这个工作生活快节奏、信息获取趋向短平快的时代，似乎静下心来好好阅读一篇文章，写下一段心里流淌而出的文字，对于很多人来说已成为一件难事，但值得庆幸的事，仍有许多人坚持在自己的一片自留地——也就是常说的个人博客中输出，或记录日常，或写下思考，亦或分享创造……</p>
 <p>这些便可作为我们的绝佳阅读养料，不是因为他们写下的东西如何深邃，选题如何宏大，而更在于他们中绝大部分人在记录<strong>真实的生活、真实的思考历程</strong>，能让我们在“快”时代中保有一份“慢意”。</p>
 <p>我一直都认为，能够选择在信息发布何其便利，分享传播何其快速的各大社媒平台之外，搭建一块属于自己的自留地，是一件值得敬佩的事情，无论能建立多久，无论文笔如何，亦无论更新频率多快。毕竟个人博客所带来的流量远远不如中心化平台带来的可观，可能一些博主坚持了很长时间，也只是被很少的人，访客寥寥无几。并且博客圈中彼此的发现也是一件难事，博主之间很难互相发现，难以形成好的联系网络。</p>
@@ -125,6 +148,7 @@
 <p>尤其是在近几年，各种博客聚合网站如雨后春笋般冒出，数量甚至多到可以专门为他们做个聚合页面了，于是便有了本页面。</p>
 <p>这个页面很粗糙，只有指向博客聚合网站的链接，所有数据均来源于互联网，由我看到后手动收集，暂时只有中文博客聚合站<del>其他语言我看不懂</del>，如有错误或补充，还请来信。排名不分先后。</p>
 <p>另外，其中有个别站点不是纯粹的博客收录站，请自行辨别。</p>
+</details>
 <hr />
 <h1>人闲车马慢</h1>
 <p>个站商店  <a href="https://storeweb.cn" target="_blank" rel="noopener noreferrer" >https://storeweb.cn</a></p>
@@ -160,7 +184,7 @@
 <p>博客中心 <a href="https://bokehub.com/home" target="_blank" rel="noopener noreferrer" >https://bokehub.com/home</a></p>
 <p>IBLOGROLL <a href="https://iblogroll.com" target="_blank" rel="noopener noreferrer" >https://iblogroll.com</a></p>
 <p>浪海导航  <a href="https://www.langhai.net" target="_blank" rel="noopener noreferrer" >https://www.langhai.net</a></p>
-<p>劳动者独立技术综合博客志  <a href="https://laodongzhe.cn" target="_blank" rel="noopener noreferrer" >https://laodongzhe.cn</a></p><br><a href="/" class="back-home">← 返回首页</a>
+<p>劳动者独立技术综合博客志  <a href="https://laodongzhe.cn" target="_blank" rel="noopener noreferrer" >https://laodongzhe.cn</a><b r>&lt;a href=&quot;/&quot; class=&quot;back-home&quot;&gt;← 返回首页</a></p>
   </main>
 </div>
 </body>

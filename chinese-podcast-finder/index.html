@@ -98,6 +98,26 @@
       max-width: 100%;
       border-radius: 6px;
     }
+    /* 折叠样式 */
+    .content details {
+      background: rgba(0,0,0,0.02);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 8px;
+      padding: 0.8em 1.2em;
+      margin: 1.2em 0;
+    }
+    .content details summary {
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0.2em 0;
+      color: #222222;
+    }
+    .content details[open] summary {
+      margin-bottom: 0.6em;
+    }
+    .content details p:last-child {
+      margin-bottom: 0;
+    }
     .back-home {
       display: inline-block;
       margin-top: 1.5rem;
@@ -111,6 +131,7 @@
     }
     @media (max-width: 640px) {
       body { padding: 1rem 0.5rem; }
+      .content details { padding: 0.6em 1em; }
     }
   </style>
 </head>
@@ -133,8 +154,8 @@
 </blockquote>
 <p>AntennaPod  <a href="https://antennapod.org" target="_blank" rel="noopener noreferrer" >https://antennapod.org</a></p>
 <blockquote>
-<p>开源播客播放器。</p>
-</blockquote><br><a href="/" class="back-home">← 返回首页</a>
+<p>开源播客播放器。<b r>&lt;a href=&quot;/&quot; class=&quot;back-home&quot;&gt;← 返回首页</a></p>
+</blockquote>
   </main>
 </div>
 </body>
