@@ -1,162 +1,88 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>中文播客发现 · Legs.Beauty</title>
-  <meta name="referrer" content="no-referrer">
-  
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>中文播客发现 · Legs.Beauty</title>
+<meta name="referrer" content="no-referrer"><meta name="description" content="美腿书签">
     <meta property="og:title" content="中文播客发现 · Legs.Beauty">
-    <meta property="og:description" content="极简书签导航">
+    <meta property="og:description" content="美腿书签">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://legs.beauty/chinese-podcast-finder/">
     
   
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: #222222;
-      line-height: 1.6;
-      padding: 2rem 1rem;
-      min-height: 100vh;
-      background-color: #ffffff;
-      
-    }
-    .container {
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 0 0.5rem;
-    }
-    .content h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: #222222;
-    }
-    .content h2 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin: 1.5rem 0 0.75rem 0;
-      padding-bottom: 0.25rem;
-      border-bottom: 2px solid #ffd966;
-      color: #222222;
-    }
-    .content h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin: 1rem 0 0.25rem 0;
-      color: #222222;
-    }
-    .content p {
-      margin: 1.2rem 0;
-      opacity: 0.92;
-      color: #222222;
-    }
-    .content ul, .content ol {
-      padding-left: 1.5rem;
-      margin: 0.5rem 0;
-    }
-    .content li {
-      margin: 0.3rem 0;
-      list-style: none;
-      color: #222222;
-    }
-    .content a {
-      color: #222222;
-      text-decoration: none;
-      border-bottom: 2px solid #ffd966;
-      padding-bottom: 1px;
-      transition: opacity 0.15s;
-    }
-    .content a:hover {
-      opacity: 0.7;
-    }
-    .content blockquote {
-      border-left: 4px solid #ffd966;
-      padding-left: 1rem;
-      margin: 1rem 0;
-      font-style: italic;
-      color: #555;
-    }
-    .content code {
-      background: #f0f0f0;
-      padding: 0.1rem 0.3rem;
-      border-radius: 3px;
-      font-size: 0.9em;
-      color: #222222;
-    }
-    .content pre {
-      background: #f0f0f0;
-      padding: 1rem;
-      border-radius: 6px;
-      overflow-x: auto;
-      margin: 1rem 0;
-      color: #222222;
-    }
-    .content img {
-      max-width: 100%;
-      border-radius: 6px;
-    }
-    /* 折叠样式 */
-    .content details {
-      background: rgba(0,0,0,0.02);
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 8px;
-      padding: 0.8em 1.2em;
-      margin: 1.2em 0;
-    }
-    .content details summary {
-      font-weight: 600;
-      cursor: pointer;
-      padding: 0.2em 0;
-      color: #222222;
-    }
-    .content details[open] summary {
-      margin-bottom: 0.6em;
-    }
-    .content details p:last-child {
-      margin-bottom: 0;
-    }
-    .back-home {
-      display: inline-block;
-      margin-top: 1.5rem;
-      color: #222222;
-      border-bottom: 2px solid #ffd966;
-      text-decoration: none;
-      padding-bottom: 2px;
-    }
-    .back-home:hover {
-      opacity: 0.7;
-    }
-    @media (max-width: 640px) {
-      body { padding: 1rem 0.5rem; }
-      .content details { padding: 0.6em 1em; }
-    }
-  </style>
+<style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#222222;line-height:1.6;min-height:100vh;padding:2rem 1rem;background-color:#fff}
+.container{max-width:720px;margin:0 auto;background:transparent;backdrop-filter:none;border-radius:16px;padding:2rem 2.5rem;box-shadow:none}
+.content h1{font-size:2rem;font-weight:700;margin-bottom:0.2rem;color:#222222}
+.content .subtitle{font-size:.95rem;opacity:.6;margin-bottom:1.8rem;color:#222222}
+.content h2{font-size:1.4rem;font-weight:600;margin:1.8rem 0 .8rem;padding-bottom:.25rem;border-bottom:2px solid #b8a9c9;color:#222222}
+.content h3{font-size:1.1rem;font-weight:600;margin:1.2rem 0 .3rem;color:#222222}
+.content p{margin:1.2rem 0;opacity:.92;color:#222222}
+.content ul,.content ol{padding-left:0;margin:.5rem 0;list-style:none}
+.content ul li,.content ol li{margin:.5rem 0;list-style:none;color:#222222}
+.content a{color:#222222;text-decoration:none;border-bottom:2px solid #b8a9c9;padding-bottom:1px;transition:opacity .15s}
+.content a:hover{opacity:.7}
+.content blockquote{border-left:4px solid #b8a9c9;padding-left:1rem;margin:1rem 0;font-style:italic;color:#555}
+.content code{background:#f0ecf5;padding:.1rem .3rem;border-radius:3px;font-size:.9em;color:#222222}
+.content pre{background:#f5f0fa;padding:1rem;border-radius:6px;overflow-x:auto;margin:1rem 0;color:#222222}
+.content img{max-width:100%;border-radius:6px}
+.home-bookmarks a{display:block!important;text-decoration:none!important;color:#222222!important}
+
+/* 普通折叠框 */
+.content details{background:rgba(0,0,0,0.04);border:1px solid #e8e8e8;border-radius:8px;padding:.6rem 1rem;margin:.5rem 0;transition:background .2s}
+.content details:hover{background:rgba(0,0,0,0.08)}
+.content details summary{font-weight:600;cursor:pointer;padding:.1em 0;color:#222222}
+.content details[open] summary{margin-bottom:.4rem}
+.content details p{margin:.2rem 0 .1rem;font-size:.9rem;opacity:.7;color:#222222}
+.content details a{color:#222222;text-decoration:none;border-bottom:none;background:linear-gradient(to top,#b8a9c9 40%,transparent 40%);padding:0 .1rem}
+.content details a:hover{opacity:.7}
+.content details>div{margin-top:.2rem}
+
+/* 书签折叠框（自动生成） */
+.content .bookmark-details{background:rgba(184,169,201,.10);border:2px solid #b8a9c9;border-left:4px solid #b8a9c9;border-radius:8px;padding:.5rem 1rem;margin:.6rem 0;transition:background .2s}
+.content .bookmark-details:hover{background:rgba(184,169,201,.18)}
+.content .bookmark-details summary{font-weight:600;cursor:pointer;padding:.1em 0;color:#222222}
+.content .bookmark-details[open] summary{margin-bottom:.3rem}
+.content .bookmark-details p{margin:.2rem 0 .1rem;font-size:.9rem;opacity:.7;color:#222222}
+.content .bookmark-details a{color:#222222;text-decoration:none;border-bottom:none;background:linear-gradient(to top,#b8a9c9 40%,transparent 40%);padding:0 .1rem;word-break:break-all}
+.content .bookmark-details a:hover{opacity:.7}
+.content .bookmark-details>div{margin-top:.2rem}
+
+.footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid #e8e8e8;text-align:center;font-size:.85rem;opacity:.6;color:#222222}
+.footer .email{font-family:monospace}
+.back-home{display:inline-block;margin-top:1.5rem;color:#222222;border-bottom:2px solid #b8a9c9;text-decoration:none;padding-bottom:2px}
+.back-home:hover{opacity:.7}
+.back-top{position:fixed;bottom:2rem;right:2rem;width:2.8rem;height:2.8rem;border-radius:50%;background:#fff;border:1px solid #e8e8e8;box-shadow:0 2px 12px rgba(0,0,0,.08);cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center;color:#222222;opacity:0;transition:opacity .3s,transform .2s;z-index:999;backdrop-filter:blur(4px)}
+.back-top.show{opacity:1}
+.back-top:hover{transform:scale(1.05);box-shadow:0 4px 16px rgba(0,0,0,.12)}
+@media(max-width:640px){body{padding:1rem .5rem}.container{padding:1.2rem 1.2rem;border-radius:12px}.content h1{font-size:1.6rem}.content details{padding:.5rem .8rem}.content .bookmark-details{padding:.4rem .8rem}.back-top{bottom:1.2rem;right:1.2rem;width:2.4rem;height:2.4rem;font-size:1rem}}
+@media print{body{background:#fff!important}.container{box-shadow:none!important;background:#fff!important;backdrop-filter:none!important}.back-top{display:none!important}}</style>
 </head>
 <body>
-<div class="container">
-  <main class="content">
-    <p>无聊的时候可以试着听一听播客哦！听说听播客可能对情绪有调节作用！</p>
-<hr />
-<p>播播鸡  <a href="https://boboji.org" target="_blank" rel="noopener noreferrer" >https://boboji.org</a></p>
-<blockquote>
-<p>中文播客榜</p>
-</blockquote>
-<p>中文播客榜  <a href="https://xyzrank.com" target="_blank" rel="noopener noreferrer" >https://xyzrank.com</a></p>
-<blockquote>
-<p>枫言枫语fyfy.fm 出品，发现中文播客。</p>
-</blockquote>
-<p>小宇宙  <a href="https://www.xiaoyuzhoufm.com" target="_blank" rel="noopener noreferrer" >https://www.xiaoyuzhoufm.com</a></p>
-<blockquote>
-<p>小宇宙博客，一个听播客的APP</p>
-</blockquote>
-<p>AntennaPod  <a href="https://antennapod.org" target="_blank" rel="noopener noreferrer" >https://antennapod.org</a></p>
-<blockquote>
-<p>开源播客播放器。<b r>&lt;a href=&quot;/&quot; class=&quot;back-home&quot;&gt;← 返回首页</a></p>
-</blockquote>
-  </main>
-</div>
-</body>
-</html>
+<div class="container"><main class="content"><p><div class="sub-bookmarks">
+<details class="bookmark-details">
+  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">中文播客榜</summary>
+  <p style="margin:0.2rem 0 0.1rem 0;font-size:0.9rem;opacity:0.7">枫言枫语fyfy.fm 出品，发现中文播客。</p>
+  <div style="margin-top:0.2rem"><a href="https://xyzrank.com" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://xyzrank.com</a></div>
+</details>
+<details class="bookmark-details">
+  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">小宇宙</summary>
+  
+  <div style="margin-top:0.2rem"><a href="https://www.xiaoyuzhoufm.com" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://www.xiaoyuzhoufm.com</a></div>
+</details>
+<details class="bookmark-details">
+  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">AntennaPod</summary>
+  <p style="margin:0.2rem 0 0.1rem 0;font-size:0.9rem;opacity:0.7">开源播客播放器</p>
+  <div style="margin-top:0.2rem"><a href="https://antennapod.org" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://antennapod.org</a></div>
+</details>
+</div></p>
+<p></p>
+<p></p><div class="back-home-wrapper"><a href="/" class="back-home">← 返回首页</a></div><div style="height:2rem"></div></main></div>
+<button class="back-top" id="backTop" title="按 T 键快速返回顶部">↑</button>
+<script>
+(function(){const b=document.getElementById('backTop');function t(){window.scrollTo({top:0,behavior:'smooth'})}
+window.addEventListener('scroll',function(){b&&b.classList.toggle('show',window.scrollY>300)})
+b&&b.addEventListener('click',t);document.addEventListener('keydown',function(e){if(e.key==='t'&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!e.shiftKey){e.preventDefault();t()}})
+})()
+</script>
+</body></html>
