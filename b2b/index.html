@@ -17,16 +17,22 @@ html{font-size:clamp(16px,2.2vw,20px)}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#222;line-height:1.7;min-height:100vh;padding:3rem 1.5rem;background-color:#f8f6f5;display:flex;justify-content:center;align-items:flex-start}
 .container{max-width:680px;width:100%;padding:0}
 
-/* 首页标题：强制保持原样，无任何链接样式 */
+/* 首页标题 */
 .home-title{font-size:clamp(2.2rem,6vw,3.2rem)!important;font-weight:700!important;letter-spacing:-0.03em!important;margin-bottom:0.1rem!important;color:#1a1a1a!important;text-decoration:none!important}
 .home-title:hover{color:#1a1a1a!important;text-decoration:none!important}
-.home-subtitle{font-size:clamp(0.95rem,1.5vw,1.1rem);color:#bbb;margin-bottom:2.8rem;font-weight:300}
+
+/* 副标题 - 对比度提升 */
+.home-subtitle{font-size:clamp(0.95rem,1.5vw,1.1rem);color:#888;margin-bottom:2.8rem;font-weight:300}
+
+/* 首页列表 */
 .home-list{list-style:none;padding:0}
 .home-list li{margin:1.2rem 0;padding:0.2rem 0;border-bottom:1px solid #eee}
 .home-list li:last-child{border-bottom:none}
 .home-list a{display:flex;justify-content:space-between;align-items:center;color:#1a1a1a;text-decoration:none;font-size:clamp(1.05rem,2vw,1.2rem);font-weight:400;padding:0.3rem 0;transition:color 0.2s}
 .home-list a:hover{color:#2563eb}
-.home-list .arrow{color:#ddd;font-size:1.2rem;transition:color 0.2s,transform 0.2s}
+
+/* 箭头 - 右侧留白，对比度提升 */
+.home-list .arrow{color:#aaa;font-size:1.2rem;transition:color 0.2s,transform 0.2s;padding-left:1rem}
 .home-list a:hover .arrow{color:#2563eb;transform:translateX(2px)}
 
 /* 子页面标题：波浪线 */
@@ -58,7 +64,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;c
 .back-top.show{opacity:0.5}
 .back-top:hover{opacity:1;transform:scale(1.05);box-shadow:0 4px 16px rgba(0,0,0,0.06)}
 
-.footer{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid #eee;text-align:center;font-size:clamp(0.7rem,0.9vw,0.8rem);color:#ccc}
+/* 首页页脚 - 对比度提升 */
+.footer{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid #eee;text-align:center;font-size:clamp(0.75rem,1vw,0.85rem);color:#888}
 .footer .email{font-family:monospace}
 
 @media(max-width:640px){body{padding:1.5rem 1rem}.home-list li{margin:1rem 0}.back-top{bottom:1.2rem;right:1.2rem;width:2.2rem;height:2.2rem;font-size:0.9rem}}
@@ -106,6 +113,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;c
 <p>已不再收录新博客，数据已归档。</p>
 <h2 id="中文独立博客列表">中文独立博客列表</h2>
 <p><a href="https://github.com/timqian/chinese-independent-blogs" target="_blank" rel="noopener noreferrer">https://github.com/timqian/chinese-independent-blogs</a></p>
+<p>特别说明：这俩以Github仓库为主体，国内网络会时常抽风打不开</p>
 <h2 id="中文博客琅琊榜">中文博客琅琊榜</h2>
 <p><a href="https://github.com/qianguyihao/blog-list" target="_blank" rel="noopener noreferrer">https://github.com/qianguyihao/blog-list</a></p>
 <h2 id="博客大聚合">博客大聚合</h2>
@@ -125,7 +133,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;c
 <p>尝试收集并链接所有的个人博客站点。印象里换了好几次域名了。</p>
 <h2 id="博客集市">博客集市</h2>
 <p><a href="https://cnb.cool/Blog_Bazaar" target="_blank" rel="noopener noreferrer">https://cnb.cool/Blog_Bazaar</a></p>
-<p>来这里摆摊，让更多人认识你！存在cnb.cool的站点</p>
+<p>来这里摆摊，让更多人认识你！存放在<code>cnb.cool</code>的站点</p>
 <h2 id="有个站">有个站</h2>
 <p><a href="https://www.ygz.ink" target="_blank" rel="noopener noreferrer">https://www.ygz.ink</a></p>
 <h2 id="博客集">博客集</h2>
@@ -182,7 +190,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;c
 <p>揪蝉是一个个人网站收录与随机访问接力平台，帮助独立网站主获得更多曝光，让用户发现优质的小众网站</p>
 <h2 id="异次元之旅-跃迁">异次元之旅-跃迁</h2>
 <p><a href="https://travel.moe" target="_blank" rel="noopener noreferrer">https://travel.moe</a></p>
-<p>萌备<code>icp。gov.moe</code>旗下站点</p>
+<p>萌备<code>icp.gov.moe</code>旗下站点</p>
 <h2 id="独立博客传送门">独立博客传送门</h2>
 <p><a href="https://webteleporter.top/about" target="_blank" rel="noopener noreferrer">https://webteleporter.top/about</a></p>
 <div class="bottom-back">
