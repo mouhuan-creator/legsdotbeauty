@@ -1,282 +1,193 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>博客聚合又聚合 · Legs.Beauty</title>
-<meta name="referrer" content="no-referrer"><meta name="description" content="美腿书签">
-    <meta property="og:title" content="博客聚合又聚合 · Legs.Beauty">
-    <meta property="og:description" content="美腿书签">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://legs.beauty/b2b/">
-    
-  
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="美腿书签">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='system-ui,-apple-system,sans-serif' font-weight='600' fill='%23222'>LB</text></svg>">
+<meta property="og:title" content="博客聚合又聚合 · Legs.Beauty">
+<meta property="og:description" content="美腿书签">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://legs.beauty/b2b/">
+
 <style>*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#222222;line-height:1.6;min-height:100vh;padding:2rem 1rem;background-color:#fff}
-.container{max-width:720px;margin:0 auto;background:transparent;backdrop-filter:none;border-radius:16px;padding:2rem 2.5rem;box-shadow:none}
-.content h1{font-size:2rem;font-weight:700;margin-bottom:0.2rem;color:#222222}
-.content .subtitle{font-size:.95rem;opacity:.6;margin-bottom:1.8rem;color:#222222}
-.content h2{font-size:1.4rem;font-weight:600;margin:1.8rem 0 .8rem;padding-bottom:.25rem;border-bottom:2px solid #b8a9c9;color:#222222}
-.content h3{font-size:1.1rem;font-weight:600;margin:1.2rem 0 .3rem;color:#222222}
-.content p{margin:1.2rem 0;opacity:.92;color:#222222}
-.content ul,.content ol{padding-left:0;margin:.5rem 0;list-style:none}
-.content ul li,.content ol li{margin:.5rem 0;list-style:none;color:#222222}
-.content a{color:#222222;text-decoration:none;border-bottom:2px solid #b8a9c9;padding-bottom:1px;transition:opacity .15s}
-.content a:hover{opacity:.7}
-.content blockquote{border-left:4px solid #b8a9c9;padding-left:1rem;margin:1rem 0;font-style:italic;color:#555}
-.content code{background:#f0ecf5;padding:.1rem .3rem;border-radius:3px;font-size:.9em;color:#222222}
-.content pre{background:#f5f0fa;padding:1rem;border-radius:6px;overflow-x:auto;margin:1rem 0;color:#222222}
-.content img{max-width:100%;border-radius:6px}
-.home-bookmarks a{display:block!important;text-decoration:none!important;color:#222222!important}
+html{font-size:clamp(16px,2.2vw,20px)}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#222;line-height:1.7;min-height:100vh;padding:3rem 1.5rem;background-color:#f8f6f5;display:flex;justify-content:center;align-items:flex-start}
+.container{max-width:680px;width:100%;padding:0}
 
-/* 普通折叠框 */
-.content details{background:rgba(0,0,0,0.04);border:1px solid #e8e8e8;border-radius:8px;padding:.6rem 1rem;margin:.5rem 0;transition:background .2s}
-.content details:hover{background:rgba(0,0,0,0.08)}
-.content details summary{font-weight:600;cursor:pointer;padding:.1em 0;color:#222222}
-.content details[open] summary{margin-bottom:.4rem}
-.content details p{margin:.2rem 0 .1rem;font-size:.9rem;opacity:.7;color:#222222}
-.content details a{color:#222222;text-decoration:none;border-bottom:none;background:linear-gradient(to top,#b8a9c9 40%,transparent 40%);padding:0 .1rem}
-.content details a:hover{opacity:.7}
-.content details>div{margin-top:.2rem}
+/* 首页标题：强制保持原样，无任何链接样式 */
+.home-title{font-size:clamp(2.2rem,6vw,3.2rem)!important;font-weight:700!important;letter-spacing:-0.03em!important;margin-bottom:0.1rem!important;color:#1a1a1a!important;text-decoration:none!important}
+.home-title:hover{color:#1a1a1a!important;text-decoration:none!important}
+.home-subtitle{font-size:clamp(0.95rem,1.5vw,1.1rem);color:#bbb;margin-bottom:2.8rem;font-weight:300}
+.home-list{list-style:none;padding:0}
+.home-list li{margin:1.2rem 0;padding:0.2rem 0;border-bottom:1px solid #eee}
+.home-list li:last-child{border-bottom:none}
+.home-list a{display:flex;justify-content:space-between;align-items:center;color:#1a1a1a;text-decoration:none;font-size:clamp(1.05rem,2vw,1.2rem);font-weight:400;padding:0.3rem 0;transition:color 0.2s}
+.home-list a:hover{color:#2563eb}
+.home-list .arrow{color:#ddd;font-size:1.2rem;transition:color 0.2s,transform 0.2s}
+.home-list a:hover .arrow{color:#2563eb;transform:translateX(2px)}
 
-/* 书签折叠框（自动生成） */
-.content .bookmark-details{background:rgba(184,169,201,.10);border:2px solid #b8a9c9;border-left:4px solid #b8a9c9;border-radius:8px;padding:.5rem 1rem;margin:.6rem 0;transition:background .2s}
-.content .bookmark-details:hover{background:rgba(184,169,201,.18)}
-.content .bookmark-details summary{font-weight:600;cursor:pointer;padding:.1em 0;color:#222222}
-.content .bookmark-details[open] summary{margin-bottom:.3rem}
-.content .bookmark-details p{margin:.2rem 0 .1rem;font-size:.9rem;opacity:.7;color:#222222}
-.content .bookmark-details a{color:#222222;text-decoration:none;border-bottom:none;background:linear-gradient(to top,#b8a9c9 40%,transparent 40%);padding:0 .1rem;word-break:break-all}
-.content .bookmark-details a:hover{opacity:.7}
-.content .bookmark-details>div{margin-top:.2rem}
+/* 子页面标题：波浪线 */
+.page-title{display:inline-block;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;color:#1a1a1a!important;text-decoration:underline wavy #b0b0b0!important;text-underline-offset:8px!important;text-decoration-thickness:2px!important;text-decoration-skip-ink:none!important}
+.page-title:hover{color:#1a1a1a!important;text-decoration:underline wavy #b0b0b0!important}
 
-.footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid #e8e8e8;text-align:center;font-size:.85rem;opacity:.6;color:#222222}
+.content{margin-top:2rem;font-size:clamp(0.95rem,1.6vw,1.1rem)}
+.content h1{font-size:clamp(1.4rem,3.5vw,1.9rem);font-weight:700;margin:2rem 0 0.1rem;color:#1a1a1a}
+.content h2{font-size:clamp(1.2rem,2.8vw,1.5rem);font-weight:600;margin:1.6rem 0 0.1rem;color:#1a1a1a}
+.content h3{font-size:clamp(1rem,2vw,1.2rem);font-weight:600;margin:1.2rem 0 0.1rem;color:#1a1a1a}
+.content p{margin:0.3rem 0 0.5rem;color:#555}
+.content a{color:#2563eb;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:rgba(37,99,235,0.2);transition:color 0.2s,text-decoration-color 0.2s}
+.content a:hover{color:#1d4ed8;text-decoration-color:rgba(29,78,216,0.4)}
+.content ul,.content ol{padding-left:1.5rem;margin:0.3rem 0 0.6rem;color:#555}
+.content ul li,.content ol li{margin:0.15rem 0}
+.content blockquote{border-left:3px solid #ddd;padding-left:1rem;margin:0.8rem 0;color:#999;font-style:italic}
+.content code{background:#f0edeb;padding:0.05rem 0.4rem;border-radius:3px;font-size:0.9em}
+.content pre{background:#f0edeb;padding:1rem;border-radius:6px;overflow-x:auto;margin:0.6rem 0}
+.content details{border:1.5px solid #e0dcd8;border-radius:6px;padding:0.5rem 0.9rem;margin:0.6rem 0;background:#faf8f7}
+.content details summary{font-weight:600;cursor:pointer;color:#1a1a1a}
+.content details[open] summary{margin-bottom:0.3rem}
+.content details p{margin:0.2rem 0 0.1rem;font-size:0.95rem;color:#666}
+
+.bottom-back{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #eee}
+.bottom-back a{color:#555;text-decoration:none;font-size:clamp(0.85rem,1vw,0.95rem);transition:color 0.2s}
+.bottom-back a:hover{color:#222}
+
+.back-top{position:fixed;bottom:2rem;right:2rem;width:2.6rem;height:2.6rem;border-radius:50%;background:#fff;border:1px solid #e8e8e8;box-shadow:0 2px 12px rgba(0,0,0,0.04);cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;color:#222;opacity:0;transition:opacity 0.3s,transform 0.2s;z-index:999}
+.back-top.show{opacity:0.5}
+.back-top:hover{opacity:1;transform:scale(1.05);box-shadow:0 4px 16px rgba(0,0,0,0.06)}
+
+.footer{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid #eee;text-align:center;font-size:clamp(0.7rem,0.9vw,0.8rem);color:#ccc}
 .footer .email{font-family:monospace}
-.back-home{display:inline-block;margin-top:1.5rem;color:#222222;border-bottom:2px solid #b8a9c9;text-decoration:none;padding-bottom:2px}
-.back-home:hover{opacity:.7}
-.back-top{position:fixed;bottom:2rem;right:2rem;width:2.8rem;height:2.8rem;border-radius:50%;background:#fff;border:1px solid #e8e8e8;box-shadow:0 2px 12px rgba(0,0,0,.08);cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center;color:#222222;opacity:0;transition:opacity .3s,transform .2s;z-index:999;backdrop-filter:blur(4px)}
-.back-top.show{opacity:1}
-.back-top:hover{transform:scale(1.05);box-shadow:0 4px 16px rgba(0,0,0,.12)}
-@media(max-width:640px){body{padding:1rem .5rem}.container{padding:1.2rem 1.2rem;border-radius:12px}.content h1{font-size:1.6rem}.content details{padding:.5rem .8rem}.content .bookmark-details{padding:.4rem .8rem}.back-top{bottom:1.2rem;right:1.2rem;width:2.4rem;height:2.4rem;font-size:1rem}}
-@media print{body{background:#fff!important}.container{box-shadow:none!important;background:#fff!important;backdrop-filter:none!important}.back-top{display:none!important}}</style>
+
+@media(max-width:640px){body{padding:1.5rem 1rem}.home-list li{margin:1rem 0}.back-top{bottom:1.2rem;right:1.2rem;width:2.2rem;height:2.2rem;font-size:0.9rem}}
+@media print{body{background:#fff!important}.container{background:#fff!important}.back-top{display:none!important}}</style>
 </head>
 <body>
-<div class="container"><main class="content"><details>
+<div class="container"><main class="content">
+<a href="/" class="page-title">博客聚合又聚合 · Legs.Beauty</a>
+<details>
 <summary>b2b?</summary>
 <p>本页路径中的<code>b2b</code>是<code>blog to blog</code>的缩写，意思是<code>从博客到博客</code>，希望能成为一个辅助各位发现博客的地方。</p>
 <p>在这个工作生活快节奏、信息获取趋向短平快的时代，似乎静下心来好好阅读一篇文章，写下一段心里流淌而出的文字，对于很多人来说已成为一件难事，但值得庆幸的事，仍有许多人坚持在自己的一片自留地——也就是常说的个人博客中输出，或记录日常，或写下思考，亦或分享创造……</p>
 <p>这些便可作为我们的绝佳阅读养料，不是因为他们写下的东西如何深邃，选题如何宏大，而更在于他们中绝大部分人在记录<strong>真实的生活、真实的思考历程</strong>，能让我们在“快”时代中保有一份“慢意”。</p>
 <p>我一直都认为，能够选择在信息发布何其便利，分享传播何其快速的各大社媒平台之外，搭建一块属于自己的自留地，是一件值得敬佩的事情，无论能建立多久，无论文笔如何，亦无论更新频率多快。毕竟个人博客所带来的流量远远不如中心化平台带来的可观，可能一些博主坚持了很长时间，也只是被很少的人，访客寥寥无几。并且博客圈中彼此的发现也是一件难事，博主之间很难互相发现，难以形成好的联系网络。</p>
 <p>于是，博客聚合网站出现了，他们把这些博客聚集在一起，让博友之间有了往来，有了更多曝光的机会。</p>
-<p>尤其是在近几年，各种博客聚合网站如雨后春笋般冒出，数量甚至多到可以专门为他们做个聚合页面了，于是便有了本页面。</p>
-<p>这个页面很粗糙，只有指向博客聚合网站的链接，所有数据均来源于互联网，由我看到后手动收集，暂时只有中文博客聚合站<del>其他语言我看不懂</del>，如有错误或补充，还请来信。排名不分先后。</p>
-<p>另外，其中有个别站点不是纯粹的博客收录站，请自行辨别。</p>
+<p>尤其是在近几年，各种博客聚合网站如雨后春笋般冒出（当然也有的站点停止了运营，很可惜），数量甚至多到可以专门为他们做个聚合页面了，于是便有了本页面。</p>
+<p>这个页面很粗糙，只有指向博客聚合网站的链接，所有数据均来源于互联网，由我看到后手动收集，暂时只有中文博客聚合站<del>其他语言我看不懂</del>，如有错误或补充，还请来信。排序不分先后。</p>
+<p>仅收集纯博客聚合站和RSS抓取站，综合性导航不收集，站点描述由从网站上复制的一句话加上我的个人理解构成。</p>
+<p>我会不定期访问这些站点，失效的话会清除或使用删除线标记。</p>
+<p>本站不对收集的网站负任何责任，在访问后请自行阅读这些网站的隐私政策，了解您的隐私信息的处理方式。</p>
+<p>另外，还有个不成熟的建议，我们加入或访问这些站点，是为了看到更多人的博客，也希望更多人看到自己的博客，所以应该减少不必要的争吵，不喜欢的话，关掉就好~</p>
 </details>
 <hr />
 <h1>人闲车马慢</h1>
-<p><div class="sub-bookmarks">
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">个站商店</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://storeweb.cn" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://storeweb.cn</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">博友圈</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://www.boyouquan.com/home" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://www.boyouquan.com/home</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">博客圈</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://bokequan.cn" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://bokequan.cn</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">博客录</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://boke.lu" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://boke.lu</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">博客志</summary>
-  
-  <div style="margin-top:0.2rem"><a href="http://www.jetli.com.cn" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">http://www.jetli.com.cn</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">十年之约</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://www.foreverblog.cn" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://www.foreverblog.cn</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">BlogFinder</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://bf.zzxworld.com" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://bf.zzxworld.com</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">开往</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://www.travellings.cn" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://www.travellings.cn</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">博客我们</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://blogwe.com" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://blogwe.com</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">中文独立博客列表</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://github.com/timqian/chinese-independent-blogs" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://github.com/timqian/chinese-independent-blogs</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">博客大聚合</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://bo.ke" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://bo.ke</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">博客联盟</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://bokelianmeng.com" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://bokelianmeng.com</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">BlogsClub-博客俱乐部</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://www.blogsclub.org" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://www.blogsclub.org</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">好站网</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://haozhan.wang" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://haozhan.wang</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">集博栈（原中文博客列表导航）</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://www.zhblogs.net" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://www.zhblogs.net</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">博客集市</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://cnb.cool/Blog_Bazaar" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://cnb.cool/Blog_Bazaar</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">博客星球</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://www.blogplanet.cn" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://www.blogplanet.cn</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">有个站</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://www.ygz.ink" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://www.ygz.ink</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">博客集</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://bloginc.cn" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://bloginc.cn</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">BlogBlog.Club - 部落部落俱樂部</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://blogblog.club" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://blogblog.club</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">中文独立博客聚合列表</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://blogroll.online" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://blogroll.online</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">万界书简</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://ruae.com" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://ruae.com</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">主题新热榜</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://www.zhuti.com" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://www.zhuti.com</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">博客之家</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://www.perass.com" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://www.perass.com</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">博客之家</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://52blog.cn" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://52blog.cn</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">若梦博客</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://www.rmbk.cc" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://www.rmbk.cc</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">笔墨迹</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://blogscn.fun" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://blogscn.fun</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">博客说</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://blogtalk.org/home" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://blogtalk.org/home</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">壹個博客</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://oneblog.net" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://oneblog.net</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">博客圈子</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://bkqz.cn" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://bkqz.cn</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">博客中心</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://bokehub.com/home" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://bokehub.com/home</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">IBLOGROLL</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://iblogroll.com" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://iblogroll.com</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">浪海导航</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://www.langhai.net" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://www.langhai.net</a></div>
-</details>
-<details class="bookmark-details">
-  <summary style="font-weight:600;cursor:pointer;padding:0.2em 0">劳动者独立技术综合博客志</summary>
-  
-  <div style="margin-top:0.2rem"><a href="https://laodongzhe.cn" target="_blank" rel="noopener noreferrer" style="color:#222222;text-decoration:none;background:linear-gradient(to top, #b8a9c9 40%, transparent 40%)">https://laodongzhe.cn</a></div>
-</details>
-</div></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p><div class="back-home-wrapper"><a href="/" class="back-home">← 返回首页</a></div><div style="height:2rem"></div></main></div>
+<h2 id="个站商店">个站商店</h2>
+<p><a href="https://storeweb.cn" target="_blank" rel="noopener noreferrer">https://storeweb.cn</a></p>
+<p>一个精致的，带社交元素的个人网站发布平台，博客收录网站</p>
+<h2 id="博友圈">博友圈</h2>
+<p><a href="https://www.boyouquan.com/home" target="_blank" rel="noopener noreferrer">https://www.boyouquan.com/home</a></p>
+<p>博友圈是博客人的专属朋友圈！我们深信每个博客背后都是一个独特的灵魂，让我们跨越山海彼此相连，一起用文字打败时间！</p>
+<h2 id="博客圈">博客圈</h2>
+<p><a href="https://bokequan.cn" target="_blank" rel="noopener noreferrer">https://bokequan.cn</a></p>
+<h2 id="博客录">博客录</h2>
+<p><a href="https://boke.lu" target="_blank" rel="noopener noreferrer">https://boke.lu</a></p>
+<h2 id="<del>博客志</del>"><del>博客志</del></h2>
+<p><a href="http://www.jetli.com.cn" target="_blank" rel="noopener noreferrer">http://www.jetli.com.cn</a></p>
+<p>始于2006年的高质量个人独立博客导航，算是博客聚合类网站的先驱了，纯手动维护。有同名公众号，不过最近几年更新滞缓了，访问发现服务器配额超了，期待回归。</p>
+<h2 id="十年之约">十年之约</h2>
+<p><a href="https://www.foreverblog.cn" target="_blank" rel="noopener noreferrer">https://www.foreverblog.cn</a></p>
+<p>宗旨：我们的博客十年不关闭或者更久， 并保持更新和活力。</p>
+<h2 id="blogfinder">BlogFinder</h2>
+<p><a href="https://bf.zzxworld.com" target="_blank" rel="noopener noreferrer">https://bf.zzxworld.com</a></p>
+<h2 id="博客我们">博客我们</h2>
+<p><a href="https://blogwe.com" target="_blank" rel="noopener noreferrer">https://blogwe.com</a></p>
+<p>已不再收录新博客，数据已归档。</p>
+<h2 id="中文独立博客列表">中文独立博客列表</h2>
+<p><a href="https://github.com/timqian/chinese-independent-blogs" target="_blank" rel="noopener noreferrer">https://github.com/timqian/chinese-independent-blogs</a></p>
+<h2 id="中文博客琅琊榜">中文博客琅琊榜</h2>
+<p><a href="https://github.com/qianguyihao/blog-list" target="_blank" rel="noopener noreferrer">https://github.com/qianguyihao/blog-list</a></p>
+<h2 id="博客大聚合">博客大聚合</h2>
+<p><a href="https://bo.ke" target="_blank" rel="noopener noreferrer">https://bo.ke</a></p>
+<p>发现值得反复阅读的独立博客</p>
+<h2 id="博客联盟">博客联盟</h2>
+<p><a href="https://bokelianmeng.com" target="_blank" rel="noopener noreferrer">https://bokelianmeng.com</a></p>
+<p>专门为独立博客提供收录、导航和聚合服务的非营利性平台</p>
+<h2 id="blogsclub-博客俱乐部">BlogsClub-博客俱乐部</h2>
+<p><a href="https://www.blogsclub.org" target="_blank" rel="noopener noreferrer">https://www.blogsclub.org</a></p>
+<p><code>blogs.club</code>也可访问</p>
+<h2 id="好站网">好站网</h2>
+<p><a href="https://haozhan.wang" target="_blank" rel="noopener noreferrer">https://haozhan.wang</a></p>
+<p>汇聚热爱 发现好站、展示好站</p>
+<h2 id="集博栈（原中文博客列表导航）">集博栈（原中文博客列表导航）</h2>
+<p><a href="https://www.heyblog.net" target="_blank" rel="noopener noreferrer">https://www.heyblog.net</a></p>
+<p>尝试收集并链接所有的个人博客站点。印象里换了好几次域名了。</p>
+<h2 id="博客集市">博客集市</h2>
+<p><a href="https://cnb.cool/Blog_Bazaar" target="_blank" rel="noopener noreferrer">https://cnb.cool/Blog_Bazaar</a></p>
+<p>来这里摆摊，让更多人认识你！存在cnb.cool的站点</p>
+<h2 id="有个站">有个站</h2>
+<p><a href="https://www.ygz.ink" target="_blank" rel="noopener noreferrer">https://www.ygz.ink</a></p>
+<h2 id="博客集">博客集</h2>
+<p><a href="https://bloginc.cn" target="_blank" rel="noopener noreferrer">https://bloginc.cn</a></p>
+<p>优秀中文博客图鉴</p>
+<h2 id="findblog">FindBlog</h2>
+<p><a href="https://findblog.net" target="_blank" rel="noopener noreferrer">https://findblog.net</a></p>
+<p>发现有趣的独立博客</p>
+<h2 id="兰亭序">兰亭序</h2>
+<p><a href="https://lanti.ng" target="_blank" rel="noopener noreferrer">https://lanti.ng</a></p>
+<p>让仍在写作的人彼此遇见。</p>
+<h2 id="blogblog.club---部落部落俱樂部">BlogBlog.Club - 部落部落俱樂部</h2>
+<p><a href="https://blogblog.club" target="_blank" rel="noopener noreferrer">https://blogblog.club</a></p>
+<p>這是一個推坑大家寫部落格的網站。一个综合的博客网站。</p>
+<h2 id="中文独立博客聚合列表">中文独立博客聚合列表</h2>
+<p><a href="https://blogroll.online" target="_blank" rel="noopener noreferrer">https://blogroll.online</a></p>
+<p>又一个博客聚合站</p>
+<h2 id="万界书简">万界书简</h2>
+<p><a href="https://ruae.com" target="_blank" rel="noopener noreferrer">https://ruae.com</a></p>
+<p>聚合百家之言，以待有缘人</p>
+<h2 id="博客之家">博客之家</h2>
+<p><a href="https://www.perass.com" target="_blank" rel="noopener noreferrer">https://www.perass.com</a></p>
+<h2 id="若梦博客">若梦博客</h2>
+<p><a href="https://www.rmbk.cc" target="_blank" rel="noopener noreferrer">https://www.rmbk.cc</a></p>
+<h2 id="笔墨迹">笔墨迹</h2>
+<p><a href="https://blogscn.fun" target="_blank" rel="noopener noreferrer">https://blogscn.fun</a></p>
+<h2 id="博客说">博客说</h2>
+<p><a href="https://blogtalk.org/home" target="_blank" rel="noopener noreferrer">https://blogtalk.org/home</a></p>
+<h2 id="壹個博客">壹個博客</h2>
+<p><a href="https://oneblog.net" target="_blank" rel="noopener noreferrer">https://oneblog.net</a></p>
+<h2 id="博客圈子">博客圈子</h2>
+<p><a href="https://bkqz.cn" target="_blank" rel="noopener noreferrer">https://bkqz.cn</a></p>
+<h2 id="博客中心">博客中心</h2>
+<p><a href="https://bokehub.com/home" target="_blank" rel="noopener noreferrer">https://bokehub.com/home</a></p>
+<h2 id="iblogroll">IBLOGROLL</h2>
+<p><a href="https://iblogroll.com" target="_blank" rel="noopener noreferrer">https://iblogroll.com</a></p>
+<h2 id="劳动者独立技术综合博客志">劳动者独立技术综合博客志</h2>
+<p><a href="https://laodongzhe.cn" target="_blank" rel="noopener noreferrer">https://laodongzhe.cn</a></p>
+<p>精选收录全球1991年至今的独立技术综合博客及论坛、AI工具等资源导航</p>
+<h2 id="rssblog">RSSBlog</h2>
+<p><a href="https://rssblog.imcbc.cn" target="_blank" rel="noopener noreferrer">https://rssblog.imcbc.cn</a></p>
+<p>A Site for Blog RSS</p>
+<hr />
+<h1>虫洞类</h1>
+<p>默认放的文档页面/偏好页面。</p>
+<h2 id="开往">开往</h2>
+<p><a href="https://www.travellings.cn" target="_blank" rel="noopener noreferrer">https://www.travellings.cn</a></p>
+<p>让传统友链“活跃”，让网页相互接力，让流量相互流动，让网络开放起来</p>
+<h2 id="虫洞">虫洞</h2>
+<p><a href="https://www.foreverblog.cn/go.html" target="_blank" rel="noopener noreferrer">https://www.foreverblog.cn/go.html</a></p>
+<p>由十年之约运营。</p>
+<h2 id="揪蝉">揪蝉</h2>
+<p><a href="http://hi.jiuchan.org" target="_blank" rel="noopener noreferrer">http://hi.jiuchan.org</a></p>
+<p>揪蝉是一个个人网站收录与随机访问接力平台，帮助独立网站主获得更多曝光，让用户发现优质的小众网站</p>
+<h1>异次元之旅-跃迁</h1>
+<p><a href="https://travel.moe" target="_blank" rel="noopener noreferrer">https://travel.moe</a></p>
+<p>萌备<code>icp。gov.moe</code>旗下站点</p>
+<h1>独立博客传送门</h1>
+<p><a href="https://webteleporter.top/about" target="_blank" rel="noopener noreferrer">https://webteleporter.top/about</a></p>
+<div class="bottom-back">
+  <a href="/">← 返回首页</a>
+</div></main></div>
 <button class="back-top" id="backTop" title="按 T 键快速返回顶部">↑</button>
 <script>
 (function(){const b=document.getElementById('backTop');function t(){window.scrollTo({top:0,behavior:'smooth'})}

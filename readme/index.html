@@ -1,79 +1,91 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>README · Legs.Beauty</title>
-<meta name="referrer" content="no-referrer"><meta name="description" content="美腿书签">
-    <meta property="og:title" content="README · Legs.Beauty">
-    <meta property="og:description" content="美腿书签">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://legs.beauty/readme/">
-    
-  
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="美腿书签">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='system-ui,-apple-system,sans-serif' font-weight='600' fill='%23222'>LB</text></svg>">
+<meta property="og:title" content="README · Legs.Beauty">
+<meta property="og:description" content="美腿书签">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://legs.beauty/readme/">
+
 <style>*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#222222;line-height:1.6;min-height:100vh;padding:2rem 1rem;background-color:#fff}
-.container{max-width:720px;margin:0 auto;background:transparent;backdrop-filter:none;border-radius:16px;padding:2rem 2.5rem;box-shadow:none}
-.content h1{font-size:2rem;font-weight:700;margin-bottom:0.2rem;color:#222222}
-.content .subtitle{font-size:.95rem;opacity:.6;margin-bottom:1.8rem;color:#222222}
-.content h2{font-size:1.4rem;font-weight:600;margin:1.8rem 0 .8rem;padding-bottom:.25rem;border-bottom:2px solid #b8a9c9;color:#222222}
-.content h3{font-size:1.1rem;font-weight:600;margin:1.2rem 0 .3rem;color:#222222}
-.content p{margin:1.2rem 0;opacity:.92;color:#222222}
-.content ul,.content ol{padding-left:0;margin:.5rem 0;list-style:none}
-.content ul li,.content ol li{margin:.5rem 0;list-style:none;color:#222222}
-.content a{color:#222222;text-decoration:none;border-bottom:2px solid #b8a9c9;padding-bottom:1px;transition:opacity .15s}
-.content a:hover{opacity:.7}
-.content blockquote{border-left:4px solid #b8a9c9;padding-left:1rem;margin:1rem 0;font-style:italic;color:#555}
-.content code{background:#f0ecf5;padding:.1rem .3rem;border-radius:3px;font-size:.9em;color:#222222}
-.content pre{background:#f5f0fa;padding:1rem;border-radius:6px;overflow-x:auto;margin:1rem 0;color:#222222}
-.content img{max-width:100%;border-radius:6px}
-.home-bookmarks a{display:block!important;text-decoration:none!important;color:#222222!important}
+html{font-size:clamp(16px,2.2vw,20px)}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#222;line-height:1.7;min-height:100vh;padding:3rem 1.5rem;background-color:#f8f6f5;display:flex;justify-content:center;align-items:flex-start}
+.container{max-width:680px;width:100%;padding:0}
 
-/* 普通折叠框 */
-.content details{background:rgba(0,0,0,0.04);border:1px solid #e8e8e8;border-radius:8px;padding:.6rem 1rem;margin:.5rem 0;transition:background .2s}
-.content details:hover{background:rgba(0,0,0,0.08)}
-.content details summary{font-weight:600;cursor:pointer;padding:.1em 0;color:#222222}
-.content details[open] summary{margin-bottom:.4rem}
-.content details p{margin:.2rem 0 .1rem;font-size:.9rem;opacity:.7;color:#222222}
-.content details a{color:#222222;text-decoration:none;border-bottom:none;background:linear-gradient(to top,#b8a9c9 40%,transparent 40%);padding:0 .1rem}
-.content details a:hover{opacity:.7}
-.content details>div{margin-top:.2rem}
+/* 首页标题：强制保持原样，无任何链接样式 */
+.home-title{font-size:clamp(2.2rem,6vw,3.2rem)!important;font-weight:700!important;letter-spacing:-0.03em!important;margin-bottom:0.1rem!important;color:#1a1a1a!important;text-decoration:none!important}
+.home-title:hover{color:#1a1a1a!important;text-decoration:none!important}
+.home-subtitle{font-size:clamp(0.95rem,1.5vw,1.1rem);color:#bbb;margin-bottom:2.8rem;font-weight:300}
+.home-list{list-style:none;padding:0}
+.home-list li{margin:1.2rem 0;padding:0.2rem 0;border-bottom:1px solid #eee}
+.home-list li:last-child{border-bottom:none}
+.home-list a{display:flex;justify-content:space-between;align-items:center;color:#1a1a1a;text-decoration:none;font-size:clamp(1.05rem,2vw,1.2rem);font-weight:400;padding:0.3rem 0;transition:color 0.2s}
+.home-list a:hover{color:#2563eb}
+.home-list .arrow{color:#ddd;font-size:1.2rem;transition:color 0.2s,transform 0.2s}
+.home-list a:hover .arrow{color:#2563eb;transform:translateX(2px)}
 
-/* 书签折叠框（自动生成） */
-.content .bookmark-details{background:rgba(184,169,201,.10);border:2px solid #b8a9c9;border-left:4px solid #b8a9c9;border-radius:8px;padding:.5rem 1rem;margin:.6rem 0;transition:background .2s}
-.content .bookmark-details:hover{background:rgba(184,169,201,.18)}
-.content .bookmark-details summary{font-weight:600;cursor:pointer;padding:.1em 0;color:#222222}
-.content .bookmark-details[open] summary{margin-bottom:.3rem}
-.content .bookmark-details p{margin:.2rem 0 .1rem;font-size:.9rem;opacity:.7;color:#222222}
-.content .bookmark-details a{color:#222222;text-decoration:none;border-bottom:none;background:linear-gradient(to top,#b8a9c9 40%,transparent 40%);padding:0 .1rem;word-break:break-all}
-.content .bookmark-details a:hover{opacity:.7}
-.content .bookmark-details>div{margin-top:.2rem}
+/* 子页面标题：波浪线 */
+.page-title{display:inline-block;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;color:#1a1a1a!important;text-decoration:underline wavy #b0b0b0!important;text-underline-offset:8px!important;text-decoration-thickness:2px!important;text-decoration-skip-ink:none!important}
+.page-title:hover{color:#1a1a1a!important;text-decoration:underline wavy #b0b0b0!important}
 
-.footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid #e8e8e8;text-align:center;font-size:.85rem;opacity:.6;color:#222222}
+.content{margin-top:2rem;font-size:clamp(0.95rem,1.6vw,1.1rem)}
+.content h1{font-size:clamp(1.4rem,3.5vw,1.9rem);font-weight:700;margin:2rem 0 0.1rem;color:#1a1a1a}
+.content h2{font-size:clamp(1.2rem,2.8vw,1.5rem);font-weight:600;margin:1.6rem 0 0.1rem;color:#1a1a1a}
+.content h3{font-size:clamp(1rem,2vw,1.2rem);font-weight:600;margin:1.2rem 0 0.1rem;color:#1a1a1a}
+.content p{margin:0.3rem 0 0.5rem;color:#555}
+.content a{color:#2563eb;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:rgba(37,99,235,0.2);transition:color 0.2s,text-decoration-color 0.2s}
+.content a:hover{color:#1d4ed8;text-decoration-color:rgba(29,78,216,0.4)}
+.content ul,.content ol{padding-left:1.5rem;margin:0.3rem 0 0.6rem;color:#555}
+.content ul li,.content ol li{margin:0.15rem 0}
+.content blockquote{border-left:3px solid #ddd;padding-left:1rem;margin:0.8rem 0;color:#999;font-style:italic}
+.content code{background:#f0edeb;padding:0.05rem 0.4rem;border-radius:3px;font-size:0.9em}
+.content pre{background:#f0edeb;padding:1rem;border-radius:6px;overflow-x:auto;margin:0.6rem 0}
+.content details{border:1.5px solid #e0dcd8;border-radius:6px;padding:0.5rem 0.9rem;margin:0.6rem 0;background:#faf8f7}
+.content details summary{font-weight:600;cursor:pointer;color:#1a1a1a}
+.content details[open] summary{margin-bottom:0.3rem}
+.content details p{margin:0.2rem 0 0.1rem;font-size:0.95rem;color:#666}
+
+.bottom-back{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #eee}
+.bottom-back a{color:#555;text-decoration:none;font-size:clamp(0.85rem,1vw,0.95rem);transition:color 0.2s}
+.bottom-back a:hover{color:#222}
+
+.back-top{position:fixed;bottom:2rem;right:2rem;width:2.6rem;height:2.6rem;border-radius:50%;background:#fff;border:1px solid #e8e8e8;box-shadow:0 2px 12px rgba(0,0,0,0.04);cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;color:#222;opacity:0;transition:opacity 0.3s,transform 0.2s;z-index:999}
+.back-top.show{opacity:0.5}
+.back-top:hover{opacity:1;transform:scale(1.05);box-shadow:0 4px 16px rgba(0,0,0,0.06)}
+
+.footer{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid #eee;text-align:center;font-size:clamp(0.7rem,0.9vw,0.8rem);color:#ccc}
 .footer .email{font-family:monospace}
-.back-home{display:inline-block;margin-top:1.5rem;color:#222222;border-bottom:2px solid #b8a9c9;text-decoration:none;padding-bottom:2px}
-.back-home:hover{opacity:.7}
-.back-top{position:fixed;bottom:2rem;right:2rem;width:2.8rem;height:2.8rem;border-radius:50%;background:#fff;border:1px solid #e8e8e8;box-shadow:0 2px 12px rgba(0,0,0,.08);cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center;color:#222222;opacity:0;transition:opacity .3s,transform .2s;z-index:999;backdrop-filter:blur(4px)}
-.back-top.show{opacity:1}
-.back-top:hover{transform:scale(1.05);box-shadow:0 4px 16px rgba(0,0,0,.12)}
-@media(max-width:640px){body{padding:1rem .5rem}.container{padding:1.2rem 1.2rem;border-radius:12px}.content h1{font-size:1.6rem}.content details{padding:.5rem .8rem}.content .bookmark-details{padding:.4rem .8rem}.back-top{bottom:1.2rem;right:1.2rem;width:2.4rem;height:2.4rem;font-size:1rem}}
-@media print{body{background:#fff!important}.container{box-shadow:none!important;background:#fff!important;backdrop-filter:none!important}.back-top{display:none!important}}</style>
+
+@media(max-width:640px){body{padding:1.5rem 1rem}.home-list li{margin:1rem 0}.back-top{bottom:1.2rem;right:1.2rem;width:2.2rem;height:2.2rem;font-size:0.9rem}}
+@media print{body{background:#fff!important}.container{background:#fff!important}.back-top{display:none!important}}</style>
 </head>
 <body>
-<div class="container"><main class="content"><p>关于<code>美腿</code>的一切！还请先看看这里。</p>
+<div class="container"><main class="content">
+<a href="/" class="page-title">README · Legs.Beauty</a>
+<p>关于<code>美腿</code>的一切！还请先看看这里。</p>
 <p>这里算是一个简易的自用书签站（或者叫微导航），收集了一些我经常去的网站/用的工具。</p>
-<h2>美腿？</h2>
-<p>站点标题是“美腿”，不过却丝毫没有该类元素，某种意义上也算是在挂羊头卖狗肉了<del>doge</del>，那为什么还要叫<code>美腿</code>呢？其实原因很简单，作为半个域名爱好者，收集了一些域名<del>（用于吃灰）</del>，在我正满心热血地计划上线一个书签站的时候，并为之挑选合适的域名的时候，<code>legs.beauty</code>就在身边，它的后缀不太常见，但整体寓意还算清晰，也比较好记忆<del>虽然长度长了些</del>，所以就成为了本站域名。其实一开始也考虑过从其他大佬手里收个专用的导航米，比如Nav.xx这样用途明确的，但发现专门为书签站收购一个域名太奢侈了些，所以就将就用了。</p>
-<h2>站点构建</h2>
+<h2 id="美腿？">美腿？</h2>
+<p>站点标题是“美腿”，不过却丝毫没有该类元素，某种意义上也算是在挂羊头卖狗肉了<del>doge</del>，那为什么还要叫<code>美腿</code>呢？其实原因很简单，作为半个域名爱好者，收集了一些域名<del>（用于吃灰）</del>，在我正满怀热血地计划者着上线一个书签站，并为之挑选合适的域名的时候，<code>legs.beauty</code>就在身边，它的后缀不太常见，但整体寓意还算清晰，也比较好记忆<del>虽然长度长了些</del>，所以就成了本站域名。</p>
+<p>其实一开始也考虑过从其他大佬手里收个专用的导航米，比如<code>nav.xx</code>这样一看就是导航专属的域名，但思来想去还是认为专门为书签站收购一个域名太奢侈了些，所以就将就着用了。</p>
+<h2 id="站点构建">站点构建</h2>
 <p>域名管理：<a href="https://porkbun.com" target="_blank" rel="noopener noreferrer">Porkbun</a></p>
-<p>站点托管/DNS/CDN：<a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer">Cloudflare</a></p>
+<p>站点托管/DNS：<a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer">Cloudflare</a></p>
 <p>主题：LEGSBEAUTY（私有）</p>
-<h2>隐私政策&amp;免责声明</h2>
-<p>本站中所有链接除声明外均不含AFF，也不是任何形式的广告，请放心食用。</p>
-<p>本站不含统计源码（至少我这边是没有的），不会统计和储存您的访问信息，但本站托管于Cloudflare Pages，您的访问信息处理方式见其隐私政策。</p>
-<p>您通过本站访问外链所产生的一切后果，本站概不负责，同时无外链跳转页，跳转发生于点击瞬间，请知悉。</p>
-<p>本站由于所有内容均由我手动编辑，而我比较懒，所以可能出现更新不及时、外链/失效跳H/跳菠菜的现象，如有该情况发生，欢迎联系我进行修改/删除。如果您的网站出现在了这里，而您并不希望如此，请来信告知，我会在收到邮件后尽快处理，对此造成的不便，还请谅解。</p>
-<p>另外，由于错综复杂的网络环境，有些网站可能无法在某些特定地区访问，我们无力解决此类问题。</p>
-<p>联系方式见首页页脚。</p><div class="back-home-wrapper"><a href="/" class="back-home">← 返回首页</a></div><div style="height:2rem"></div></main></div>
+<h2 id="隐私政策&amp;免责声明">隐私政策&amp;免责声明</h2>
+<p>本站中所有链接均不含AFF，也不是任何形式的广告，请放心食用。</p>
+<p>本站不含统计源码（至少源码中是没有的），不会统计和储存您的访问信息，但本站托管于Cloudflare Pages，您的访问信息处理方式见其隐私政策。</p>
+<p>您通过本站访问外链所产生的一切后果，本站概不负责，同时无外链跳转中间页，跳转发生于点击瞬间，请知悉。</p>
+<p>本站由于所有内容均由我手动编辑，而我比较懒，所以可能出现更新不及时、链接失效/跳H/跳菠菜/更换域名的现象，如有此类情况发生，欢迎联系我进行改正/删除。如果您的网站出现在了这里，而您并不希望如此，请来信告知，我会在收到邮件后尽快处理，对此造成的不便，还请谅解。</p>
+<p>另外，由于国内错综复杂的网络环境，有些网站可能无法在某些特定地区访问（包括本站），本站无力解决此类问题。</p>
+<p>联系方式见首页页脚。</p>
+<div class="bottom-back">
+  <a href="/">← 返回首页</a>
+</div></main></div>
 <button class="back-top" id="backTop" title="按 T 键快速返回顶部">↑</button>
 <script>
 (function(){const b=document.getElementById('backTop');function t(){window.scrollTo({top:0,behavior:'smooth'})}
