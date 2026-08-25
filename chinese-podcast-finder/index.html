@@ -6,39 +6,31 @@
 <title>中文播客发现 · Legs.Beauty</title>
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="美腿书签">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='system-ui,-apple-system,sans-serif' font-weight='600' fill='%23222'>LB</text></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='system-ui,-apple-system,sans-serif' font-weight='600' fill='%23222'%3ELB%3C/text%3E%3C/svg%3E">
 <meta property="og:title" content="中文播客发现 · Legs.Beauty">
 <meta property="og:description" content="美腿书签">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://legs.beauty/chinese-podcast-finder/">
-
+<meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Crect width="100" height="100" fill="%23b8a9c9" rx="12"/%3E%3Ctext y=".9em" font-size="80" x="50" y="68" font-family="system-ui,-apple-system,sans-serif" font-weight="700" fill="%23ffffff" text-anchor="middle"%3ELB%3C/text%3E%3C/svg%3E">
 <style>*{margin:0;padding:0;box-sizing:border-box}
 html{font-size:clamp(16px,2.2vw,20px)}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#222;line-height:1.7;min-height:100vh;padding:3rem 1.5rem;background-color:#f8f6f5;display:flex;justify-content:center;align-items:flex-start}
-.container{max-width:680px;width:100%;padding:0 1rem}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#222;line-height:1.7;min-height:100vh;padding:2rem 1rem;background-color:#f8f6f5;display:flex;justify-content:center;align-items:flex-start}
+.container{max-width:640px;width:100%;padding:2rem 1.5rem;background:#ffffff;border-radius:16px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
 
-/* 首页标题 - 居中 */
-.home-title{display:block;text-align:center;font-size:clamp(2.2rem,6vw,3.2rem)!important;font-weight:700!important;letter-spacing:-0.03em!important;margin-bottom:0.1rem!important;color:#1a1a1a!important;text-decoration:none!important}
-.home-title:hover{color:#1a1a1a!important;text-decoration:none!important}
+.home-title{text-align:center;font-size:clamp(2rem,5vw,2.8rem);font-weight:700;letter-spacing:-0.02em;color:#1a1a1a}
+.home-subtitle{text-align:center;font-size:clamp(0.95rem,1.2vw,1.1rem);color:#999;font-weight:300;margin-bottom:2rem}
 
-/* 首页副标题 - 居中 */
-.home-subtitle{text-align:center;font-size:clamp(0.95rem,1.5vw,1.1rem);color:#888;margin-bottom:2.8rem;font-weight:300}
+.card-grid{display:flex;flex-direction:column;gap:0.6rem;margin-bottom:2rem}
+.card{display:block;padding:0.8rem 1rem;border-radius:8px;text-align:center;text-decoration:none;font-size:clamp(1rem,1.5vw,1.15rem);font-weight:450;color:#1a1a1a;border:1px solid #eee;background:#f8f6f5;transition:background 0.15s,border-color 0.15s}
+.card:hover{background:#f0edeb;border-color:#d5d0cc}
 
-.home-list{list-style:none;padding:0}
-.home-list li{margin:1.2rem 0;padding:0.2rem 0;border-bottom:1px solid #eee}
-.home-list li:last-child{border-bottom:none}
-.home-list a{display:flex;justify-content:space-between;align-items:center;color:#1a1a1a;text-decoration:none;font-size:clamp(1.05rem,2vw,1.2rem);font-weight:400;padding:0.3rem 0;transition:color 0.2s}
-.home-list a:hover{color:#2563eb}
-.home-list .arrow{color:#aaa;font-size:1.2rem;transition:color 0.2s,transform 0.2s}
-.home-list a:hover .arrow{color:#2563eb;transform:translateX(2px)}
-
-.page-title{display:inline-block;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;color:#1a1a1a!important;text-decoration:underline wavy #b0b0b0!important;text-underline-offset:8px!important;text-decoration-thickness:2px!important;text-decoration-skip-ink:none!important}
-.page-title:hover{color:#1a1a1a!important;text-decoration:underline wavy #b0b0b0!important}
+.page-title{display:inline-block;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;color:#1a1a1a!important;text-decoration:underline wavy #d5d5d5!important;text-underline-offset:8px!important;text-decoration-thickness:2px!important;text-decoration-skip-ink:none!important}
+.page-title:hover{color:#1a1a1a!important;text-decoration:underline wavy #d5d5d5!important}
 
 .content{margin-top:2rem;font-size:clamp(0.95rem,1.6vw,1.1rem)}
-.content h1{font-size:clamp(1.4rem,3.5vw,1.9rem);font-weight:700;margin:2rem 0 0.1rem;color:#1a1a1a}
-.content h2{font-size:clamp(1.2rem,2.8vw,1.5rem);font-weight:600;margin:1.6rem 0 0.1rem;color:#1a1a1a}
-.content h3{font-size:clamp(1rem,2vw,1.2rem);font-weight:600;margin:1.2rem 0 0.1rem;color:#1a1a1a}
+.content h1{font-size:clamp(1.4rem,3.5vw,2rem);font-weight:700;margin:2rem 0 0.1rem;color:#1a1a1a}
+.content h2{font-size:clamp(1.2rem,2.8vw,1.6rem);font-weight:600;margin:1.6rem 0 0.1rem;color:#1a1a1a}
+.content h3{font-size:clamp(1rem,2vw,1.3rem);font-weight:600;margin:1.2rem 0 0.1rem;color:#1a1a1a}
 .content p{margin:0.3rem 0 0.5rem;color:#555}
 .content a{color:#2563eb;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:rgba(37,99,235,0.2);transition:color 0.2s,text-decoration-color 0.2s}
 .content a:hover{color:#1d4ed8;text-decoration-color:rgba(29,78,216,0.4)}
@@ -53,17 +45,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;c
 .content details p{margin:0.2rem 0 0.1rem;font-size:0.95rem;color:#666}
 
 .bottom-back{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #eee}
-.bottom-back a{color:#555;text-decoration:none;font-size:clamp(0.85rem,1vw,0.95rem);transition:color 0.2s}
+.bottom-back a{color:#999;text-decoration:none;font-size:clamp(0.85rem,1vw,0.95rem);transition:color 0.2s}
 .bottom-back a:hover{color:#222}
 
 .back-top{position:fixed;bottom:2rem;right:2rem;width:2.6rem;height:2.6rem;border-radius:50%;background:#fff;border:1px solid #e8e8e8;box-shadow:0 2px 12px rgba(0,0,0,0.04);cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;color:#222;opacity:0;transition:opacity 0.3s,transform 0.2s;z-index:999}
 .back-top.show{opacity:0.5}
 .back-top:hover{opacity:1;transform:scale(1.05);box-shadow:0 4px 16px rgba(0,0,0,0.06)}
 
-.footer{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid #eee;text-align:center;font-size:clamp(0.75rem,1vw,0.85rem);color:#888}
-.footer .email{font-family:monospace}
+.footer{margin-top:2rem;padding-top:1.5rem;border-top:1px solid #eee;text-align:center;font-size:clamp(0.7rem,0.9vw,0.8rem);color:#bbb}
+.footer .email{font-family:monospace;color:#888}
 
-@media(max-width:640px){body{padding:1.5rem 1rem}.container{padding:0 0.5rem}.home-list li{margin:1rem 0}.back-top{bottom:1.2rem;right:1.2rem;width:2.2rem;height:2.2rem;font-size:0.9rem}}
+@media(max-width:640px){body{padding:1rem 0.8rem}.container{padding:1.5rem 1rem;max-width:100%;border-radius:12px}.home-title{font-size:1.8rem}.back-top{bottom:1.2rem;right:1.2rem;width:2.2rem;height:2.2rem;font-size:0.9rem}}
 @media print{body{background:#fff!important}.container{background:#fff!important}.back-top{display:none!important}}</style>
 </head>
 <body>
